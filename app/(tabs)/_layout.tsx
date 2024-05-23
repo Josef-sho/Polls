@@ -24,6 +24,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+  name="polls"
+  options={{
+    title: 'polls',
+    tabBarIcon: ({ color, focused }) => (
+      <TabBarIcon name={focused ? 'md-podium' : 'md-podium-outline'} color={color} />
+    ),
+  }}
+/>
+      <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',

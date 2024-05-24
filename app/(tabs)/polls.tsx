@@ -5,7 +5,6 @@ export default function TabTwoScreen() {
   return (
     
     <View style={styles.container}>
-      <Text> Hi </Text>
       <View style={styles.pollsContainer}>
         <Text style={styles.polltitle}> Example Question </Text>
       </View>
@@ -13,6 +12,7 @@ export default function TabTwoScreen() {
     </View>
   );
 }
+// help
 
 const styles = StyleSheet.create({ 
 
@@ -25,9 +25,6 @@ const styles = StyleSheet.create({
     pollsContainer : {
         backgroundColor: '#fff',
         borderRadius:5,
-
-    },
-    polltitle:{
 
     }
  });

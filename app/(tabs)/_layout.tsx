@@ -28,7 +28,7 @@ export default function TabLayout() {
   options={{
     title: 'polls',
     tabBarIcon: ({ color, focused }) => (
-      <TabBarIcon name={focused ? 'md-podium' : 'md-podium-outline'} color={color} />
+      <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
     ),
   }}
 />
@@ -41,6 +41,7 @@ export default function TabLayout() {
           ),
         }}
       />
+      
     </Tabs>
   );
 }

@@ -10,7 +10,7 @@ export default function TabTwoScreen() {
 
       <FlatList
       data={Polls}
-      contentContainerStyle={{gap:5, padding:30, marginTop: 10}} 
+      contentContainerStyle={styles.container} 
       renderItem={({item}) => (
         <View style={styles.pollsContainer}>
           <Text style={styles.polltitle}> Example Question </Text>
@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
     container : {
         flex: 1,
         backgroundColor: 'gainsboro',
-        padding:30
+        padding:30,
+        gap:5,
+        marginTop: 10
         
     },
     pollsContainer : {

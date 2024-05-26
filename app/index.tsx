@@ -1,8 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, FlatList, SafeAreaView } from "react-native";
 import { Stack } from "expo-router";
+import { Link } from "expo-router";
 
-const Polls = [1, 2, 3];
+const Polls = [{id:1},{id:2},{id:3}];
 
 export default function TabTwoScreen() {
   return (
@@ -16,14 +17,16 @@ export default function TabTwoScreen() {
           data={Polls}
           contentContainerStyle={styles.listContent}
           renderItem={({ item }) => (
-            <View style={styles.pollsContainer}>
-              <Text style={styles.polltitle}>Example Question {item}</Text>
+            <Link style={styles.pollsContainer} href={`/Polls/${item.id}`} >
+            <View >
+              <Text style={styles.polltitle}>{item.id}:Example Question</Text>
             </View>
+            </Link>
           )}
           keyExtractor={(item) => item.toString()}
         />
       </View>
-      <StatusBar style="auto" />
+      
     </SafeAreaView>
   );
 }
@@ -31,7 +34,7 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'gainsboro',
+    // backgroundColor: 'gainsboro',
   },
   container: {
     flex: 1,

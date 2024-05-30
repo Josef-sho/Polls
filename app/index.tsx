@@ -12,7 +12,7 @@ export default function TabTwoScreen() {
           title: 'Polls',
         }} 
       />
-      // <StatusBar style="auto" />
+     
       <View style={styles.container}>
         <FlatList
           data={Polls}

@@ -14,15 +14,22 @@ const Polls = {
   ]
 };
 
-const vote = () => {
-
-}
 
 export default function PollsDetails() {
   const {id} = useLocalSearchParams()
   const [selected, setselected] = useState('')
+
+  const vote = () => {
+    console.log("Vote:", selected);
+  }
+
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{
+          title: 'Voting Poll',
+        }} 
+      />
+
         <Text style={styles.question}>{Polls.question}</Text>
         
         <View style={{gap:5}}>
@@ -35,7 +42,7 @@ export default function PollsDetails() {
           </Pressable>
         ))}
         </View>
-        <Button title="Vote" onPress={}>
+        <Button title="Vote" onPress={vote}>
 
         </Button>
     </View>

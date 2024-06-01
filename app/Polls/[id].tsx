@@ -1,6 +1,8 @@
 import { Stack, useLocalSearchParams} from "expo-router";
 import React from "react";
-import { Text,View,StyleSheet } from "react-native";
+import { Text,View,StyleSheet, Pressable,Button} from "react-native";
+import { Feather } from '@expo/vector-icons';
+import { useState } from "react";
 
 
 const Polls = {
@@ -12,19 +14,30 @@ const Polls = {
   ]
 };
 
+const vote = () => {
+
+}
+
 export default function PollsDetails() {
   const {id} = useLocalSearchParams()
+  const [selected, setselected] = useState('')
   return (
     <View style={styles.container}>
         <Text style={styles.question}>{Polls.question}</Text>
         
         <View style={{gap:5}}>
         {Polls.options.map((option) => ( 
-          <View key={option} style={styles.optionContainer}>
+          <Pressable onPress={() => setselected(option)} key={option} style={styles.optionContainer}>
+            <Feather name={option === selected ? "check-circle" :"circle"} 
+            size={18} 
+            color={option === selected ? "geeen" : "gray"} />
             <Text>{option}</Text>
-          </View>
+          </Pressable>
         ))}
         </View>
+        <Button title="Vote" onPress={}>
+
+        </Button>
     </View>
   )
 }
@@ -32,7 +45,7 @@ const styles = StyleSheet.create({
 
   container : {
     padding:10,
-    gap:10
+    gap:20,
   },
   question: {
     fontSize:20,
@@ -41,6 +54,9 @@ const styles = StyleSheet.create({
   optionContainer:{
     backgroundColor:"white",
     padding:10,
-    borderRadius:5
+    borderRadius:5,
+    flexDirection:"row",
+    alignItems:"center",
+    gap:10,
   },
 })

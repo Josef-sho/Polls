@@ -29,7 +29,6 @@ export default function PollsDetails() {
           title: 'Voting Poll',
         }} 
       />
-
         <Text style={styles.question}>{Polls.question}</Text>
         
         <View style={{gap:5}}>

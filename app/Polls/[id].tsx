@@ -36,7 +36,7 @@ export default function PollsDetails() {
           <Pressable onPress={() => setselected(option)} key={option} style={styles.optionContainer}>
             <Feather name={option === selected ? "check-circle" :"circle"} 
             size={18} 
-            color={option === selected ? "geeen" : "gray"} />
+            color={option === selected ? "green" : "gray"} />
             <Text>{option}</Text>
           </Pressable>
         ))}

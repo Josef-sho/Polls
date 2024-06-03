@@ -2,14 +2,21 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, FlatList, SafeAreaView } from "react-native";
 import { Stack } from "expo-router";
 import { Link } from "expo-router";
-
+import { AntDesign } from '@expo/vector-icons';
 const Polls = [{id:1},{id:2},{id:3}];
 
 export default function TabTwoScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <Stack.Screen options={{
-          title: 'Polls',
+          title: 'Polls', 
+          headerRight: () => (
+            <Link href={"/Polls/new"}>
+              <Text>
+                <AntDesign name="plus" size={24} color="blue" style={{marginRight: 10}} />
+              </Text>
+            </Link>
+          ),  
         }} 
       />
      

@@ -1,12 +1,13 @@
+import { Stack } from "expo-router";
 import {View, Text} from "react-native";
 
 export default function CreatePoll() {
   return (
-    //add header title
-    //add input field for options
-    // 
     <View>
-        
+        <Stack.Screen options={{title:"CreatePoll"}}/>
+        <Text> New Poll </Text>
     </View>
   );
 }
+
+const styles

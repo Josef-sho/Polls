@@ -5,7 +5,7 @@ export default function CreatePoll() {
   return (
     <View>
         <Stack.Screen options={{title:"CreatePoll"}}/>
-        <Text> New Poll </Text>
+        <Text> Create a new Poll </Text>
     </View>
   );
 }
